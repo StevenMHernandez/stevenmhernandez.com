@@ -1,0 +1,18 @@
+#admin header {
+    padding-top: 4.5em;
+    padding-bottom: 1.8em;
+}
+
+#admin textarea {
+    font-family: monospace;
+}
+
+#admin label {
+    display: block;
+    max-width: 40em;
+}
+
+#admin label textarea {
+    margin-top: 1em;
+    margin-left: 0;
+}
