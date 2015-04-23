@@ -7,13 +7,6 @@ use Laravel\Lumen\Routing\Controller as BaseController;
 
 class ProjectController extends BaseController
 {
-    private $validator = [
-        'title' => 'required',
-        'slug' => 'required|unique:projects',
-        'image' => 'required',
-        'summary' => 'required',
-    ];
-
     public function index()
     {
         $projects = Project::orderBy('created_at', 'DESC')->get();
@@ -26,7 +19,12 @@ class ProjectController extends BaseController
     }
     public function store(Request $request)
     {
-        $this->validate($request, $this->validator);
+        $this->validate($request, [
+            'title' => 'required',
+            'slug' => 'required|unique:projects',
+            'image' => 'required',
+            'summary' => 'required',
+        ]);
         $project = new Project(Input::all());
         $project->save();
         return redirect()->route('admin.project.index');
@@ -46,7 +44,12 @@ class ProjectController extends BaseController
 
     public function update(Request $request, $id)
     {
-        $this->validate($request, $this->validator);
+        $this->validate($request, [
+            'title' => 'required',
+            'slug' => 'required',
+            'image' => 'required',
+            'summary' => 'required',
+        ]);
         Project::find($id)->update(Input::all());
         return redirect()->route('admin.project.index');
     }

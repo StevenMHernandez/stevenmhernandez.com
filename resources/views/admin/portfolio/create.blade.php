@@ -13,10 +13,10 @@
     <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
 
     <label for="title">Title.</label>
-    <input id="title" name="title" required>
+    <input id="title" name="title" required value="{{old('title')}}">
 
     <label for="slug">Slug.</label>
-    <input id="slug" name="slug" required>
+    <input id="slug" name="slug" required value="{{old('slug')}}">
 
     <label for="projects_select">Projects.</label>
     <select id="projects_select" name="projects_select">
@@ -33,7 +33,7 @@
 
     <label for="summary">
         Summary.
-        <textarea id="summary" name="summary" rows="5" required></textarea>
+        <textarea id="summary" name="summary" rows="5" required>{{old('summary')}}</textarea>
     </label>
 
     <input value="Save." type="submit">

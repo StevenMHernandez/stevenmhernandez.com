@@ -8,12 +8,6 @@ use Laravel\Lumen\Routing\Controller as BaseController;
 
 class PortfolioController extends BaseController
 {
-    private $validator = [
-        'title' => 'required',
-        'slug' => 'required|unique:projects',
-        'summary' => 'required',
-    ];
-
     public function index()
     {
         $portfolios = Portfolio::orderBy('created_at', 'DESC')->get();
@@ -28,7 +22,11 @@ class PortfolioController extends BaseController
 
     public function store(Request $request)
     {
-        $this->validate($request, $this->validator);
+        $this->validate($request, [
+            'title' => 'required',
+            'slug' => 'required|unique:portfolios',
+            'summary' => 'required',
+        ]);
         $portfolio = new Portfolio(Input::all());
         $portfolio->save();
         $portfolio->projects()->sync($this->buildSyncArray(Input::get('projects')));
@@ -50,7 +48,11 @@ class PortfolioController extends BaseController
 
     public function update(Request $request, $id)
     {
-        $this->validate($request, $this->validator);
+        $this->validate($request, [
+            'title' => 'required',
+            'slug' => 'required',
+            'summary' => 'required',
+        ]);
         $portfolio = Portfolio::find($id);
         $portfolio->update(Input::all());
         $portfolio->projects()->sync($this->buildSyncArray(Input::get('projects')));
