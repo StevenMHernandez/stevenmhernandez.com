@@ -19,16 +19,20 @@
     <label for="slug">Slug.</label>
     <input id="slug" name="slug" required value="{{$portfolio->slug}}">
 
-    <label for="projects">Projects.</label>
-    <select id="projects" name="projects[]" multiple>
+    <label for="projects_select">Projects.</label>
+    <select id="projects_select" name="projects_select">
+            <option value="default" disabled selected>Select a project.</option>
         @if(count($projects))
             @foreach($projects as $project)
-                <option value="{{$project->id}}" @if(in_array($project->id, $portfolio->projectList))selected @endif >{{$project->title}}</option>
+                <option value="{{$project->id}}">{{$project->title}}</option>
             @endforeach
         @else
             <option disabled>Currently, there are no projects.</option>
         @endif
     </select>
+    <div id="projects_list"></div>
+
+    <input id="projectsJson" name="projectsJson" type="hidden" value="{{json_encode($portfolio->projects)}}"/>
 
     <label for="summary">
         Summary.
@@ -37,4 +41,8 @@
 
     <input value="Save." type="submit">
 </form>
+@stop
+
+@section('scripts')
+<script src='/assets/js/bower_components/requirejs/require.js' data-main='/assets/js/page/admin/portfolio.js'></script>
 @stop

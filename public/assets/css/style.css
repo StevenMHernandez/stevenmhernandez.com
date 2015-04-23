@@ -159,7 +159,7 @@ img, canvas, iframe {
     color: #999;
 }
 
-input, textarea, select {
+.bordered, input, textarea, select {
     width: 36em;
     max-width: 72%;
     display: block;
@@ -206,7 +206,7 @@ footer a:hover {
     color: #fff;
 }
 
-header, nav, h1, h2, p, img, canvas, iframe, input, textarea, select, footer, ul, label {
+header, nav, h1, h2, p, img, canvas, iframe, .bordered, input, textarea, select, footer, ul, label {
     transition: border .9s, padding .9s, margin .9s;
     -webkit-transition: border .9s, padding .9s, margin .9s;
 }
@@ -216,7 +216,7 @@ header, nav, h1, h2, p, img, canvas, iframe, input, textarea, select, footer, ul
         padding-left: 1.35em;
     }
 
-    input, textarea, select {
+    .bordered, input, textarea, select {
         margin-left: 1.35em;
     }
 
@@ -243,7 +243,7 @@ header, nav, h1, h2, p, img, canvas, iframe, input, textarea, select, footer, ul
         padding-left: 4.5;
     }
 
-    input, textarea, select {
+    .bordered, input, textarea, select {
         margin-left: 4.5em;
     }
 
@@ -269,7 +269,7 @@ header, nav, h1, h2, p, img, canvas, iframe, input, textarea, select, footer, ul
         padding-left: 13.5em;
     }
 
-    input, textarea, select {
+    .bordered, input, textarea, select {
         margin-left: 13.5em;
     }
 
@@ -295,7 +295,7 @@ header, nav, h1, h2, p, img, canvas, iframe, input, textarea, select, footer, ul
         padding-left: 22.5em;
     }
 
-    input, textarea, select {
+    .bordered, input, textarea, select {
         margin-left: 22.5em;
     }
 
@@ -321,6 +321,28 @@ h2#contactMessage {
     color: #900 !important;
 }
 
-.error {
+.error, .delete {
     color: #900 !important;
+}
+
+.bordered {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.bordered:last-of-type {
+    border-bottom: black solid 3px;
+}
+
+.hidden {
+    visibility: hidden;
+    height: 0;
+}
+
+.right {
+    float: right;
+}
+
+.background-muted {
+    background: #eee;
 }

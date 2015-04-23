@@ -2,3 +2,4 @@
 /vendor
 .env
 /.idea
+/public/assets/js/bower_components

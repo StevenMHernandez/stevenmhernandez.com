@@ -18,8 +18,9 @@
     <label for="slug">Slug.</label>
     <input id="slug" name="slug" required>
 
-    <label for="projects">Projects.</label>
-    <select id="projects" name="projects[]" multiple>
+    <label for="projects_select">Projects.</label>
+    <select id="projects_select" name="projects_select">
+            <option value="default" disabled selected>Select a project.</option>
         @if(count($projects))
             @foreach($projects as $project)
                 <option value="{{$project->id}}">{{$project->title}}</option>
@@ -28,6 +29,7 @@
             <option disabled>Currently, there are no projects.</option>
         @endif
     </select>
+    <div id="projects_list"></div>
 
     <label for="summary">
         Summary.
@@ -39,5 +41,5 @@
 @stop
 
 @section('scripts')
-<script src='/assets/js/components/ractive/ractive.min.js'></script>
+<script src='/assets/js/bower_components/requirejs/require.js' data-main='/assets/js/page/admin/portfolio.js'></script>
 @stop

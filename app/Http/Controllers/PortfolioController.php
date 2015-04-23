@@ -44,7 +44,6 @@ class PortfolioController extends BaseController
     public function edit($id)
     {
         $portfolio = Portfolio::where('id', '=', $id)->with('projects')->first();
-        $portfolio->projectList = $portfolio->projects->lists('id');
         $projects = Project::orderBy('created_at', 'DESC')->get();
         return view('admin.portfolio.edit', compact('portfolio', 'projects'));
     }

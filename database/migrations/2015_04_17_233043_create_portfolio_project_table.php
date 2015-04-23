@@ -18,7 +18,7 @@ class CreatePortfolioProjectTable extends Migration {
 			$table->foreign('portfolio_id')->references('id')->on('portfolios')->onDelete('cascade');
 			$table->integer('project_id')->nullable()->unsigned()->index();
 			$table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
-			$table->integer('order');
+			$table->integer('sort_order');
 			$table->timestamps();
 		});
 	}
