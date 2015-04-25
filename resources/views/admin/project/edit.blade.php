@@ -11,7 +11,7 @@
 
 <form method="post" action="{{route('admin.project.update', ['id' => $project->id])}}">
     <input type="hidden" name="_method" value="PUT">
-    <input type="hidden" name="_token" value="{{ csrf_token() }}"/>
+    <input type="hidden" name="_token" id="_token" value="{{ csrf_token() }}"/>
 
     <label for="title">Title.</label>
     <input id="title" name="title" required value="{{$project->title}}">
@@ -26,6 +26,7 @@
     <input id="date" name="date" value="{{$project->date}}">
 
     <label for="image">Image.
+        <input type="file" id="upload"/>
         <textarea id="image" name="image" rows="3" required>{{$project->image}}</textarea>
     </label>
 
@@ -34,9 +35,14 @@
     </label>
 
     <label for="body">Body.
+        <input type="file" id="body_upload"/>
         <textarea id="body" name="body" rows="9">{{$project->body}}</textarea>
     </label>
 
     <input value="Save." type="submit">
 </form>
+@stop
+
+@section('scripts')
+<script src='/assets/js/bower_components/requirejs/require.js' data-main='/assets/js/page/admin/project.js'></script>
 @stop

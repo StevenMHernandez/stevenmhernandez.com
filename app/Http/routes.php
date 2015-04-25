@@ -105,4 +105,14 @@ $app->group(['middleware' => 'auth', 'namespace' => 'App\Http\Controllers'], fun
     $app->delete('admin/project/{id}', [
         'as' => 'admin.project.destroy', 'uses' => 'ProjectController@destroy'
     ]);
+
+
+    /*
+     *
+     * Admin Images
+     *
+     */
+    $app->post('admin/image', [
+        'as' => 'admin.image.create', 'uses' => 'ImageController@create'
+    ]);
 });

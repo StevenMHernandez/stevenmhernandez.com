@@ -346,3 +346,8 @@ h2#contactMessage {
 .background-muted {
     background: #eee;
 }
+
+label input {
+    margin-left: 0;
+    width: 36%;
+}
