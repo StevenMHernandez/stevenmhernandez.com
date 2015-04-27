@@ -1,5 +1,6 @@
 /lumen.log
 /vendor
+composer.lock
 .env
 /.idea
 /public/assets/js/bower_components

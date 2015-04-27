@@ -33,6 +33,9 @@ class ProjectController extends BaseController
     public function show($slug)
     {
         $project = Project::where('slug', '=', $slug)->first();
+        if(!$project) {
+            abort(404);
+        }
         return view('site.project.show', compact('project'));
     }
 

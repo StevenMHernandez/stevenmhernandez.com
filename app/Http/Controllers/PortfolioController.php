@@ -36,6 +36,9 @@ class PortfolioController extends BaseController
     public function show($slug)
     {
         $portfolio = Portfolio::where('slug', '=', $slug)->with('projects')->first();
+        if(!$portfolio) {
+            abort(404);
+        }
         return view('site.portfolio.show', compact('portfolio'));
     }
 
@@ -74,8 +77,10 @@ class PortfolioController extends BaseController
     private function buildSyncArray($array)
     {
         $new_array = [];
-        foreach($array as $key => $value) {
-            $new_array[$value] = ['sort_order' => $key];
+        if($array[0]) {
+            foreach ($array as $key => $value) {
+                $new_array[$value] = ['sort_order' => $key];
+            }
         }
         return $new_array;
     }
