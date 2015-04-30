@@ -36,7 +36,7 @@ class Handler extends ExceptionHandler {
      */
     public function render($request, Exception $e)
     {
-        if (view()->exists('errors.'.$e->getStatusCode()))
+        if (method_exists($e, 'getStatusCode') && view()->exists('errors.'.$e->getStatusCode()))
         {
             return response(view('errors.' . $e->getStatusCode()), $e->getStatusCode());
         }
