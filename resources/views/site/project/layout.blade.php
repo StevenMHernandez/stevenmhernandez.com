@@ -25,6 +25,8 @@
 
         @yield('content')
 
+        @include('layout._contact_form')
+
     </article>
 
 <footer>

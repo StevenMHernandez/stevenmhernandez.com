@@ -17,6 +17,16 @@ $app->group(['namespace' => 'App\Http\Controllers'], function ($app) {
     $app->get('portfolio/for/{slug}', [
         'as' => 'portfolio.show', 'uses' => 'PortfolioController@show'
     ]);
+
+
+    /*
+     *
+     * Contact
+     *
+     */
+    $app->post('contact', [
+        'as' => 'contact.send', 'uses' => 'ContactController@send'
+    ]);
 });
 
 
