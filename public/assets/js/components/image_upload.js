@@ -15,7 +15,7 @@ define(function (require) {
         url: '/admin/image',
         type: 'POST',
         success: function (response) {
-          $textarea.val($textarea.val() + '<img src="' + response + '" alt=""/>\n');
+          $textarea.val($textarea.val() + '<img src="' + response + '" alt=""/>');
         },
         data: formData,
         processData: false,
