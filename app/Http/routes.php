@@ -61,8 +61,8 @@ $app->group(['namespace' => 'App\Http\Controllers'], function ($app) {
  * Admin
  *
  */
-$app->group(['middleware' => 'auth', 'namespace' => 'App\Http\Controllers'], function ($app) {
-    $app->get('admin', [
+$app->group(['middleware' => 'auth', 'namespace' => 'App\Http\Controllers', 'prefix' => 'admin'], function ($app) {
+    $app->get('/', [
         'as' => 'admin', 'uses' => 'AdminController@index'
     ]);
 
@@ -72,22 +72,22 @@ $app->group(['middleware' => 'auth', 'namespace' => 'App\Http\Controllers'], fun
      * Admin Portfolios
      *
      */
-    $app->get('admin/portfolio', [
+    $app->get('portfolio', [
         'as' => 'admin.portfolio.index', 'uses' => 'PortfolioController@index'
     ]);
-    $app->get('admin/portfolio/create', [
+    $app->get('portfolio/create', [
         'as' => 'admin.portfolio.create', 'uses' => 'PortfolioController@create'
     ]);
-    $app->post('admin/portfolio', [
+    $app->post('portfolio', [
         'as' => 'admin.portfolio.store', 'uses' => 'PortfolioController@store'
     ]);
-    $app->get('admin/portfolio/{id}/edit', [
+    $app->get('portfolio/{id}/edit', [
         'as' => 'admin.portfolio.edit', 'uses' => 'PortfolioController@edit'
     ]);
-    $app->put('admin/portfolio/{id}', [
+    $app->put('portfolio/{id}', [
         'as' => 'admin.portfolio.update', 'uses' => 'PortfolioController@update'
     ]);
-    $app->delete('admin/portfolio/{id}', [
+    $app->delete('portfolio/{id}', [
         'as' => 'admin.portfolio.destroy', 'uses' => 'PortfolioController@destroy'
     ]);
 
@@ -97,22 +97,22 @@ $app->group(['middleware' => 'auth', 'namespace' => 'App\Http\Controllers'], fun
      * Admin Projects
      *
      */
-    $app->get('admin/project', [
+    $app->get('project', [
         'as' => 'admin.project.index', 'uses' => 'ProjectController@index'
     ]);
-    $app->get('admin/project/create', [
+    $app->get('project/create', [
         'as' => 'admin.project.create', 'uses' => 'ProjectController@create'
     ]);
-    $app->post('admin/project', [
+    $app->post('project', [
         'as' => 'admin.project.store', 'uses' => 'ProjectController@store'
     ]);
-    $app->get('admin/project/{id}/edit', [
+    $app->get('project/{id}/edit', [
         'as' => 'admin.project.edit', 'uses' => 'ProjectController@edit'
     ]);
-    $app->put('admin/project/{id}', [
+    $app->put('project/{id}', [
         'as' => 'admin.project.update', 'uses' => 'ProjectController@update'
     ]);
-    $app->delete('admin/project/{id}', [
+    $app->delete('project/{id}', [
         'as' => 'admin.project.destroy', 'uses' => 'ProjectController@destroy'
     ]);
 
@@ -122,7 +122,7 @@ $app->group(['middleware' => 'auth', 'namespace' => 'App\Http\Controllers'], fun
      * Admin Images
      *
      */
-    $app->post('admin/image', [
+    $app->post('image', [
         'as' => 'admin.image.create', 'uses' => 'ImageController@create'
     ]);
 });

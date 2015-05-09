@@ -5,7 +5,7 @@
 
         <link href="/assets/css/style.css" rel="stylesheet" type="text/css"/>
         <link href="/assets/css/admin.css" rel="stylesheet" type="text/css"/>
-        <link href='http://fonts.googleapis.com/css?family=Raleway:900,100,500' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Raleway:900,500' rel='stylesheet' type='text/css'>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
         <link rel="shortcut icon" href="/assets/images/logo.png">
@@ -14,7 +14,7 @@
     </head>
     <body id="admin">
         <header id="header">
-            <div>Steven<wbr/><span class="accent">Hernandez</span></div>
+            <div><a href="{{route('home')}}">Steven<wbr/><span class="accent">Hernandez</span></a></div>
         </header>
         <nav>
             <ul>
