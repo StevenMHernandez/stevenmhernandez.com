@@ -70,7 +70,7 @@ class PortfolioController extends BaseController
 
     public function home()
     {
-        $portfolio = Portfolio::with('projects')->first();
+        $portfolio = Portfolio::with('projects')->find(env('DEFAULT_PORTFOLIO_ID'));
         return view('site.portfolio.show', compact('portfolio'));
     }
 

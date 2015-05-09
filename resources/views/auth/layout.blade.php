@@ -5,7 +5,7 @@
     </head>
 
     <body>
-        <header id="header">
+        <header>
             <div><a href="/">Steven<wbr/><span class="accent">Hernandez</span></a></div>
         </header>
         <article>

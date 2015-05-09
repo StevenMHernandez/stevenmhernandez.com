@@ -13,7 +13,7 @@
         <title>@yield('title')</title>
     </head>
     <body id="admin">
-        <header id="header">
+        <header>
             <div><a href="{{route('home')}}">Steven<wbr/><span class="accent">Hernandez</span></a></div>
         </header>
         <nav>

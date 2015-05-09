@@ -5,10 +5,10 @@
 </head>
 
 <body>
-    <header id="header">
+    <header>
         <div><a href="/">Steven<wbr/><span class="accent">Hernandez</span></a></div>
     </header>
-    <nav id="sticky_navigation">
+    <nav>
         <ul>
             <li><a href="#about">About.</a></li>
             <li><a href="#portfolio">Portfolio.</a></li>
