@@ -36,6 +36,9 @@ class PortfolioController extends BaseController
     public function show($slug)
     {
         $portfolio = Portfolio::where('slug', '=', $slug)->with('projects')->first();
+        if($portfolio->id == env('DEFAULT_PORTFOLIO_ID')) {
+            return redirect()->route('home');
+        }
         if(!$portfolio) {
             abort(404);
         }

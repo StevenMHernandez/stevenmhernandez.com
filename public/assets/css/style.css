@@ -232,7 +232,7 @@ header, nav, h1, h2, p, img, canvas, iframe, .bordered, input, textarea, select,
         padding: 0 1.485em 1em;
     }
 
-    img, canvas, iframe {
+    img, canvas, iframe, .vimeo {
         border-left: 1.35em black solid;
         padding-left: 1em;
     }
@@ -240,7 +240,7 @@ header, nav, h1, h2, p, img, canvas, iframe, .bordered, input, textarea, select,
 
 @media (min-width: 600px) and (max-width: 1099px) {
     header, footer {
-        padding-left: 4.5;
+        padding-left: 4.5em;
     }
 
     .bordered, input, textarea, select {
@@ -259,7 +259,7 @@ header, nav, h1, h2, p, img, canvas, iframe, .bordered, input, textarea, select,
         padding: 0 3.75em 1em;
     }
 
-    img, canvas, iframe {
+    img, canvas, iframe, .vimeo {
         border-left: 4.5em black solid;
     }
 }
@@ -285,7 +285,7 @@ header, nav, h1, h2, p, img, canvas, iframe, .bordered, input, textarea, select,
         padding: 0 10.85em 1em;
     }
 
-    img, canvas, iframe {
+    img, canvas, iframe, .vimeo {
         border-left: 13.5em black solid;
     }
 }
@@ -311,7 +311,7 @@ header, nav, h1, h2, p, img, canvas, iframe, .bordered, input, textarea, select,
         padding: 0 18em 1em;
     }
 
-    img, canvas, iframe {
+    img, canvas, iframe, .vimeo {
         border-left: 22.5em black solid;
         max-width: 72%;
     }
@@ -350,4 +350,18 @@ h2#contactMessage {
 label input {
     margin-left: 0;
     width: 36%;
+}
+
+#title {
+    border-color: #fff;
+    padding-left: 0;
+}
+
+.vimeo {
+    padding-left: 2em;
+}
+
+.vimeo iframe {
+    border: 0;
+    padding: 0;
 }

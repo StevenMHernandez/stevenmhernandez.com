@@ -1,7 +1,9 @@
 @extends('site.portfolio.layout')
 
 @section('content')
-<h1 id="title">{{$portfolio->title}}</h1>
+@if($portfolio->id != env('DEFAULT_PORTFOLIO_ID'))
+    <h1 id="title"><span class="accent">Portfolio for:</span> {{$portfolio->title}}</h1>
+@endif
 
 <h1 id="about">About. <span class="accent">Steven Hernandez</span></h1>
 
@@ -14,7 +16,7 @@
 
 @foreach($portfolio->projects as $project)
     <a href="{{route('project.show', ['slug' => $project->slug])}}">{!!$project->image!!}</a>
-    <a href="{{route('project.show', ['slug' => $project->slug])}}"><h2>{{$project->title}} <small>{{$project->date}}</small></h2></a>
+    <a href="{{route('project.show', ['slug' => $project->slug])}}"><h2>{{$project->title}} <small class="accent">{{$project->date}}</small></h2></a>
     <p class="bold">{{$project->subtitle}}</p>
 
     {!!$project->summary!!}
