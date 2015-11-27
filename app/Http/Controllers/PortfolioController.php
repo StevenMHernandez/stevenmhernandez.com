@@ -36,13 +36,14 @@ class PortfolioController extends BaseController
     public function show($slug)
     {
         $portfolio = Portfolio::where('slug', '=', $slug)->with('projects')->first();
-        if($portfolio->id == env('DEFAULT_PORTFOLIO_ID')) {
+        if ($portfolio->id == env('DEFAULT_PORTFOLIO_ID')) {
             return redirect()->route('home');
         }
-        if(!$portfolio) {
+        if (!$portfolio) {
             abort(404);
         }
-        return view('site.portfolio.show', compact('portfolio'));
+        $title = $portfolio->title;
+        return view('site.portfolio.show', compact('portfolio', 'title'));
     }
 
     public function edit($id)
@@ -74,13 +75,14 @@ class PortfolioController extends BaseController
     public function home()
     {
         $portfolio = Portfolio::with('projects')->find(env('DEFAULT_PORTFOLIO_ID'));
-        return view('site.portfolio.show', compact('portfolio'));
+        $title = $portfolio->title;
+        return view('site.portfolio.show', compact('portfolio', 'title'));
     }
 
     private function buildSyncArray($array)
     {
         $new_array = [];
-        if($array[0]) {
+        if ($array[0]) {
             foreach ($array as $key => $value) {
                 $new_array[$value] = ['sort_order' => $key];
             }

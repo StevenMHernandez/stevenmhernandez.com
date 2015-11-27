@@ -17,6 +17,7 @@ class ProjectController extends BaseController
     {
         return view('admin.project.create');
     }
+
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -33,10 +34,11 @@ class ProjectController extends BaseController
     public function show($slug)
     {
         $project = Project::where('slug', '=', $slug)->first();
-        if(!$project) {
+        if (!$project) {
             abort(404);
         }
-        return view('site.project.show', compact('project'));
+        $title = $project->title;
+        return view('site.project.show', compact('project', 'title'));
     }
 
     public function edit($id)
