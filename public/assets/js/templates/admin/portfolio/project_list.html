@@ -1,12 +1,14 @@
 {{#projects:index}}
 <div class="bordered background-muted">
-        {{title}}
-        <a href="#" class="right delete" data-id="{{id}}" data-index="{{index}}">×</a>
+    <a href="#" class="accent shift_up" data-id="{{id}}" data-index="{{index}}">&uarr;</a>
+    <a href="#" class="accent shift_down" data-id="{{id}}" data-index="{{index}}">&darr;</a>
+    {{title}}
+    <a href="#" class="right delete" data-id="{{id}}" data-index="{{index}}">&times;</a>
 </div>
 {{/projects}}
 
 <select class="hidden" id="projects" name="projects[]" multiple hidden>
-        {{#projects}}
-        <option value="{{id}}" selected>{{id}}</option>
-        {{/projects}}
+    {{#projects}}
+    <option value="{{id}}" selected>{{id}}</option>
+    {{/projects}}
 </select>

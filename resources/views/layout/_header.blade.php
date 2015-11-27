@@ -4,4 +4,4 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <link rel="shortcut icon" href="/assets/images/logo.png">
 <link href="/assets/images/logo.png" rel="apple-touch-icon-precomposed"/>
-<title>Graphic Design, Web Design and Web Development. - Steven Hernandez - Richmond and Midlothian, VA</title>
+<title>{{ !empty($title) ? $title : 'Graphic Design, Web Design and Web Development.' }} | {{ env('SITE_TITLE') }}</title>
