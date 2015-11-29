@@ -43,7 +43,8 @@ class PortfolioController extends BaseController
             abort(404);
         }
         $title = $portfolio->title;
-        return view('site.portfolio.show', compact('portfolio', 'title'));
+        $meta_description = strip_tags(explode('.', $portfolio->summary)[0]);
+        return view('site.portfolio.show', compact('portfolio', 'title', 'meta_description'));
     }
 
     public function edit($id)
@@ -76,7 +77,8 @@ class PortfolioController extends BaseController
     {
         $portfolio = Portfolio::with('projects')->find(env('DEFAULT_PORTFOLIO_ID'));
         $title = $portfolio->title;
-        return view('site.portfolio.show', compact('portfolio', 'title'));
+        $meta_description = strip_tags(explode('.', $portfolio->summary)[0]);
+        return view('site.portfolio.show', compact('portfolio', 'title', 'meta_description'));
     }
 
     private function buildSyncArray($array)

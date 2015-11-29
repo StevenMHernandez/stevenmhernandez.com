@@ -4,9 +4,9 @@
     <div class="mainImage">
         {!!$project->image!!}
     </div>
-    <h2>{{$project->title}}
+    <h1>{{$project->title}}
         <small class="accent">{{$project->date}}</small>
-    </h2>
+    </h1>
     <p class="bold">{{$project->subtitle}}</p>
     {!!$project->summary!!}
     {!!$project->body!!}

@@ -38,7 +38,8 @@ class ProjectController extends BaseController
             abort(404);
         }
         $title = $project->title;
-        return view('site.project.show', compact('project', 'title'));
+        $meta_description = strip_tags(explode('.', $project->summary)[0]);
+        return view('site.project.show', compact('project', 'title', 'meta_description'));
     }
 
     public function edit($id)

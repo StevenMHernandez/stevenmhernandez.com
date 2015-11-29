@@ -137,7 +137,7 @@ p a:hover {
     color: #000;
 }
 
-p.readMore{
+p.readMore {
     text-align: right;
 }
 
@@ -156,6 +156,7 @@ img {
     margin: 1em auto;
     display: block;
 }
+
 .vimeo {
     background: #000;
     border: none;
@@ -321,6 +322,18 @@ header, nav, h1, h2, p, .bordered, input, textarea, select, footer, ul, label {
     p, article ul, label {
         padding: 0 18em 1em;
     }
+}
+
+.contact {
+    background: #F0F0F0;
+    border-top: 4px solid #e0e0e0;
+    margin-top: 1em;
+}
+
+.contact .contact_header {
+    display: inline-block;
+    font-weight: bold;
+    margin: 2em 0 0.5em;
 }
 
 h2#contactMessage {

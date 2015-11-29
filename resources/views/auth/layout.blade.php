@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        @include('layout._header')
+        @include('layout._head')
     </head>
 
     <body>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-@include('layout._header')
+@include('layout._head')
 </head>
 
 <body>
@@ -10,8 +10,7 @@
     </header>
     <nav>
         <ul>
-            <li><a href="/#about">About.</a></li>
-            <li><a href="/#portfolio">Portfolio.</a></li>
+            <li><a href="/">Portfolio.</a></li>
             <li><a href="/#contact">Contact.</a></li>
         </ul>
     </nav>
@@ -19,12 +18,12 @@
 
         @yield('content')
 
-        @include('layout._contact_form')
-
     </article>
 
+    @include('layout._contact_form')
+
 <footer>
-    Steven<span class="accent">Hernandez</span> 2014<br/>
+    Steven<span class="accent">Hernandez</span><br/>
     Graphic Design, Web Design and Web Development. <span class="accent">- Richmond and Midlothian, VA</span><br/><br/>
     <a href="/#contact">Contact</a>.
 </footer>

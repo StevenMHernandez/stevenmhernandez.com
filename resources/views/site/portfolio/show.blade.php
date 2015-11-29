@@ -2,17 +2,14 @@
 
 @section('content')
     @if($portfolio->id != env('DEFAULT_PORTFOLIO_ID'))
-        <h1 id="title"><span class="accent">Portfolio for:</span> {{$portfolio->title}}</h1>
+        <h1 id="about"><span class="accent">Portfolio for:</span> {{$portfolio->title}}</h1>
+    @else
+        <h1 id="about">About: <span class="accent">Steven Hernandez</span></h1>
     @endif
-
-    <h1 id="about">About. <span class="accent">Steven Hernandez</span></h1>
 
     <p>
         {!!$portfolio->summary!!}
     </p>
-
-
-    <h1 id="portfolio">Portfolio. <span class="accent">Steven Hernandez</span></h1>
 
     @foreach($portfolio->projects as $project)
         <div class="mainImage">
