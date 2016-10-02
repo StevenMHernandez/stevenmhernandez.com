@@ -1,5 +1,6 @@
 <meta charset="utf-8"/>
 <link href="/assets/css/style.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/js/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
 <link rel="shortcut icon" href="/assets/images/logo.png">
 <link href="/assets/images/logo.png" rel="apple-touch-icon-precomposed"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>

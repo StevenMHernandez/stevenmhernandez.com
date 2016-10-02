@@ -12,6 +12,9 @@
         <ul>
             <li><a href="#about">About.</a></li>
             <li><a href="#contact">Contact.</a></li>
+            <li><a href="http://blog.stevenhdesigns.com/">Blog.</a></li>
+            <li class="right"><a href="https://www.linkedin.com/in/stevenmhernandez"><i class="fa fa-linkedin-square"></i></a></li>
+            <li class="right"><a href="https://github.com/StevenmHernandez"><i class="fa fa-github"></i></a></li>
         </ul>
     </nav>
     <article>
