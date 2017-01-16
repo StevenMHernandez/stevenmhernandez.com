@@ -6,7 +6,7 @@
 
 <body>
     <header>
-        <div><a href="/">Steven<wbr/><span class="accent">Hernandez</span></a></div>
+        <div><a href="/">Steven<span class="accent">Hernandez</span></a></div>
     </header>
     <nav>
         <ul>
@@ -14,7 +14,7 @@
             <li><a href="#contact">Contact.</a></li>
             <li><a href="http://blog.stevenhdesigns.com/">Blog.</a></li>
             <li class="right"><a href="https://www.linkedin.com/in/stevenmhernandez"><i class="fa fa-linkedin-square"></i></a></li>
-            <li class="right"><a href="https://github.com/StevenmHernandez"><i class="fa fa-github"></i></a></li>
+            <li class="right"><a href="https://github.com/StevenMHernandez"><i class="fa fa-github"></i></a></li>
         </ul>
     </nav>
     <article>
@@ -26,8 +26,8 @@
     @include('layout._contact_form')
 
 <footer>
-    Steven<wbr/><span class="accent">Hernandez</span><br/>
-    Graphic Design, Web Design and Web Development. <span class="accent">- Richmond and Midlothian, VA</span><br/><br/>
+    Steven Hernandez<br/>
+    {{ env('SITE_TAGLINE') }} <span class="accent">- Richmond, VA</span><br/><br/>
     <a href="/#contact">Contact</a>.
 </footer>
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>

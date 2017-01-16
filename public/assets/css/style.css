@@ -4,12 +4,12 @@
 }
 
 ::selection {
-    background: #000;
+    background: #101010;
     color: #fff;
 }
 
 ::-moz-selection {
-    background: #000;
+    background: #101010;
     color: #fff;
 }
 
@@ -20,7 +20,8 @@
 }
 
 html {
-    font-family: "Raleway", Helvetica, Arial, sans-serif;
+    background: #f4f4f4;
+    font-family: "Courier New", monospace;
     box-sizing: border-box;
     border-bottom: solid #6cc 1px;
     overflow-x: hidden;
@@ -31,8 +32,8 @@ header {
     padding: 4.5em;
     padding-top: 27%;
     display: block;
-    background: #000;
-    color: #fff;
+    background: #101010;
+    color: #e6e6e6;
 }
 
 header div {
@@ -41,7 +42,7 @@ header div {
 }
 
 header a {
-    color: #fff;
+    color: #e6e6e6;
     text-decoration: none;
 }
 
@@ -57,7 +58,7 @@ a:hover {
 nav {
     padding: 0 3em 3em;
     margin-top: -1px;
-    background: #000;
+    background: #101010;
     color: #fff;
     font-size: 1.5em;
 }
@@ -83,25 +84,26 @@ nav li.right a {
 nav a {
     color: #fff;
     text-decoration: none;
-    border-bottom: solid white 1px;
+    border-bottom: solid #f4f4f4 1px;
     transition: border .18s;
     -webkit-transition: border .18s;
 }
 
 nav a:hover {
-    border-bottom: solid white 3.6em;
+    border-bottom: solid #f4f4f4 3.6em;
 }
 
 h1 {
+    color: #101010;
     margin: 2em auto 1em;
     padding: 1em 1em 1em;
-    border-left: solid 3em #000;
+    border-left: solid 3em #101010;
 }
 
 h2 {
-    border-color: #fff !important;
+    border-color: #f4f4f4 !important;
     margin-bottom: .25em;
-    color: #000 !important;
+    color: #101010 !important;
 }
 
 a h2:hover {
@@ -115,7 +117,7 @@ h3 {
     font-weight: 500;
 }
 
-p, article ul, label {
+p, blockquote, .p-content, article ul, label {
     padding: 0 3.75em 1em;
     line-height: 1.5em;
     max-width: 27em;
@@ -127,7 +129,7 @@ article ul {
 }
 
 article li {
-    border-left: 1.5em black solid;
+    border-left: 1.5em #101010 solid;
     padding-left: .5em;
     margin-bottom: .5em;
 }
@@ -166,7 +168,7 @@ img {
 }
 
 .vimeo {
-    background: #000;
+    background: #101010;
     border: none;
     padding: 1em;
     display: block;
@@ -174,7 +176,7 @@ img {
 }
 
 .mainImage {
-    background: #000;
+    background: #101010;
     padding: 1em;
     margin: 1em 0;
 }
@@ -185,22 +187,27 @@ img {
 
 .vimeo iframe {
     margin: auto;
-    display: block
+    display: block;
+    width: 800px;
 }
 
 .accent {
     color: #999;
 }
 
+a:hover span.accent {
+    color: #808080;
+}
+
 .bordered, input, textarea, select {
     width: 36em;
     max-width: 72%;
     display: block;
-    border: black solid 3px;
+    border: #101010 solid 3px;
     margin-bottom: 1em;
     font-size: 1em;
     padding: 1.25em;
-    font-family: raleway, helvetica, arial, sans-serif;
+    font-family: "Courier New", monospace;
 }
 
 select {
@@ -239,7 +246,7 @@ footer a:hover {
     color: #fff;
 }
 
-header, nav, h1, h2, p, .bordered, input, textarea, select, footer, ul, label {
+header, nav, h1, h2, p, blockquote, .p-content, .bordered, input, textarea, select, footer, ul, label {
     transition: border .9s, padding .9s, margin .9s;
     -webkit-transition: border .9s, padding .9s, margin .9s;
 }
@@ -258,10 +265,10 @@ header, nav, h1, h2, p, .bordered, input, textarea, select, footer, ul, label {
     }
 
     h1, h2 {
-        border-left: solid .9em #000;
+        border-left: solid .9em #101010;
     }
 
-    p, article ul, label {
+    p, blockquote, .p-content, .p-content, article ul, label {
         padding: 0 1.485em 1em;
     }
 }
@@ -280,10 +287,10 @@ header, nav, h1, h2, p, .bordered, input, textarea, select, footer, ul, label {
     }
 
     h1, h2 {
-        border-left: solid 3em #000;
+        border-left: solid 3em #101010;
     }
 
-    p, article ul, label {
+    p, blockquote, .p-content, article ul, label {
         padding: 0 3.75em 1em;
     }
 }
@@ -302,10 +309,10 @@ header, nav, h1, h2, p, .bordered, input, textarea, select, footer, ul, label {
     }
 
     h1, h2 {
-        border-left: solid 9em #000;
+        border-left: solid 9em #101010;
     }
 
-    p, article ul, label {
+    p, blockquote, .p-content, article ul, label {
         padding: 0 10.85em 1em;
     }
 }
@@ -324,17 +331,17 @@ header, nav, h1, h2, p, .bordered, input, textarea, select, footer, ul, label {
     }
 
     h1, h2 {
-        border-left: solid 15em #000;
+        border-left: solid 15em #101010;
     }
 
-    p, article ul, label {
+    p, blockquote, .p-content, article ul, label {
         padding: 0 18em 1em;
     }
 }
 
 .contact {
-    background: #F0F0F0;
-    border-top: 4px solid #e0e0e0;
+    background: #e6e6e6;
+    border-top: 4px solid #d9d9d9;
     margin-top: 1em;
 }
 

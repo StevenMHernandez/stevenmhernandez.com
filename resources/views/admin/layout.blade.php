@@ -14,7 +14,7 @@
     </head>
     <body id="admin">
         <header>
-            <div><a href="{{route('home')}}">Steven<wbr/><span class="accent">Hernandez</span></a></div>
+            <div><a href="{{route('home')}}">Steven<span class="accent">Hernandez</span></a></div>
         </header>
         <nav>
             <ul>

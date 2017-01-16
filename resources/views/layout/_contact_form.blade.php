@@ -1,5 +1,5 @@
 <aside class="contact" id="contact">
-    <p class="contact_header">Contact. <span class="accent">Steven Hernandez</span></p>
+    <p class="contact_header">Contact. <span class="accent">Steven Hernandez.</span></p>
     @if($errors->has())
         @foreach ($errors->all() as $error)
             <p class="error">{{ $error }}</p>
@@ -22,7 +22,5 @@
         <input value="Send Message." type="submit">
     </form>
 
-    <p>Call me at : <a href="tel:{{stripNonNumeric(env('CONTACT_PHONE'))}}">{{env('CONTACT_PHONE')}}</a></p>
-
-    <p>or reach me at : <a href="mailto:{{env('CONTACT_EMAIL')}}">{{env('CONTACT_EMAIL')}}</a></p>
+    <p>Or reach me directly at: <a href="mailto:{{env('CONTACT_EMAIL')}}">{{env('CONTACT_EMAIL')}}</a></p>
 </aside>
