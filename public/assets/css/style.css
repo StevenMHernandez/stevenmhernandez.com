@@ -21,11 +21,12 @@
 
 html {
     background: #f4f4f4;
-    font-family: "Courier New", monospace;
+    font-family: 'Inconsolata', monospace;
     box-sizing: border-box;
     border-bottom: solid #6cc 1px;
     overflow-x: hidden;
     min-height: 100%;
+    font-size:0.9em;
 }
 
 header {
@@ -207,7 +208,7 @@ a:hover span.accent {
     margin-bottom: 1em;
     font-size: 1em;
     padding: 1.25em;
-    font-family: "Courier New", monospace;
+    font-family: 'Inconsolata', monospace;
 }
 
 select {
