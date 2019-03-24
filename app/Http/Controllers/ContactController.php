@@ -15,6 +15,7 @@ class ContactController extends BaseController
             'name' => 'required',
             'email' => 'required|email',
             'message' => 'required',
+	    'name2' => 'not_regex:.*',
         ]);
 
         if ($v->fails()) {
