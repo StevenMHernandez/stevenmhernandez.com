@@ -372,6 +372,8 @@ h2#contactMessage {
 .hidden {
     visibility: hidden;
     height: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .right {

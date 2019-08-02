@@ -94,4 +94,6 @@ $app->routeMiddleware([
 
 require __DIR__ . '/../app/Http/routes.php';
 
+$app->configure('services');
+
 return $app;
