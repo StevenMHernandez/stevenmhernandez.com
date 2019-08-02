@@ -5,7 +5,7 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "laravel/lumen-framework": "5.1.*",
+        "laravel/lumen-framework": "5.7.*",
         "vlucas/phpdotenv": "~1.0",
         "guzzlehttp/guzzle": "^6.3"
     },
