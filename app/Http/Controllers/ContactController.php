@@ -28,7 +28,8 @@ class ContactController extends BaseController
                 $message->to(env('CONTACT_EMAIL'), env('CONTACT_NAME'))->subject('Contact Form . ' . $input['name']);
             });
             Session::flash('success', 'Your message has been sent.');
-            return redirect($request->session()->previousUrl() . "#contact");
+	    app('session')->put('success', 'Your message has been sent.');
+            return redirect("/?success=True#contact");
         }
     }
 }

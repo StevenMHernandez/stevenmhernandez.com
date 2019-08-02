@@ -5,7 +5,7 @@
  * Portfolio
  *
  */
-$router->group(['namespace' => 'App\Http\Controllers'], function ($app) {
+$router->group([], function ($router) {
     $router->get('/', [
         'as' => 'home', 'uses' => 'PortfolioController@home'
     ]);
@@ -35,7 +35,7 @@ $router->group(['namespace' => 'App\Http\Controllers'], function ($app) {
  * Auth
  *
  */
-$router->group(['namespace' => 'App\Http\Controllers'], function ($app) {
+$router->group([], function ($router) {
     $router->get('login', [
         'as' => 'login',
         'uses' => 'AuthController@login',
@@ -61,7 +61,7 @@ $router->group(['namespace' => 'App\Http\Controllers'], function ($app) {
  * Admin
  *
  */
-$router->group(['middleware' => 'auth', 'namespace' => 'App\Http\Controllers', 'prefix' => 'admin'], function ($app) {
+$router->group(['middleware' => 'auth', 'prefix' => 'admin'], function ($router) {
     $router->get('/', [
         'as' => 'admin', 'uses' => 'AdminController@index'
     ]);

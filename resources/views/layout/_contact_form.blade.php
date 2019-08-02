@@ -1,15 +1,15 @@
 <aside class="contact" id="contact">
     <p class="contact_header">Contact. <span class="accent">Steven M. Hernandez</span></p>
-    @if($errors->has())
+    @if(isset($errors) && $errors->has())
         @foreach ($errors->all() as $error)
             <p class="error">{{ $error }}</p>
         @endforeach
     @endif
-    @if(Session::has('success'))
-        <p>{{ session('success') }}</p>
+    @if(array_key_exists('success', app('request')->input()) )
+        <p style="color: #44cc44">Your message has been sent. Thank you.</p>
     @endif
     <form action="{{route('contact.send')}}" method="POST">
-        <input type="hidden" name="_token" id="_token" value="{{ csrf_token() }}"/>
+        <input type="hidden" name="_token" id="_token" value="{{ app('session')->get('_token') }}"/>
         <label for="name">Name.</label>
         <input id="name" name="name" required/>
 	<input class="hidden" id="name2" name="name2"/>
@@ -23,6 +23,7 @@
         <input value="Send Message." type="submit">
     </form>
 
-    <p>Or reach me directly at: <a href="mailto:{{env('CONTACT_EMAIL')}}">{{env('CONTACT_EMAIL')}}</a></p>
+    <p>Alternatively, please contact me directly at: <a href="mailto:{{env('CONTACT_EMAIL')}}">{{env('CONTACT_EMAIL')}}</a></p>
+    <p>I look forward to talking to you</p>
 </aside>
 

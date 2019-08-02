@@ -1,8 +1,12 @@
 <?php
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__.'/../vendor/autoload.php';
 
-Dotenv::load(__DIR__ . '/../');
+try {
+    (new Dotenv\Dotenv(dirname(__DIR__)))->load();
+} catch (Dotenv\Exception\InvalidPathException $e) {
+    //
+}
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +20,7 @@ Dotenv::load(__DIR__ . '/../');
 */
 
 $app = new Laravel\Lumen\Application(
-    realpath(__DIR__.'/../')
+    dirname(__DIR__)
 );
 
 $app->withFacades();
@@ -35,14 +39,32 @@ $app->withEloquent();
 */
 
 $app->singleton(
-    'Illuminate\Contracts\Debug\ExceptionHandler',
-    'App\Exceptions\Handler'
+    Illuminate\Contracts\Debug\ExceptionHandler::class,
+    App\Exceptions\Handler::class
 );
 
 $app->singleton(
-    'Illuminate\Contracts\Console\Kernel',
-    'App\Console\Kernel'
+    Illuminate\Contracts\Console\Kernel::class,
+    App\Console\Kernel::class
 );
+
+$app->app->singleton('mailer', function ($app) {
+     return $app->loadComponent('mail', 'Illuminate\Mail\MailServiceProvider', 'mailer');
+});
+
+$app->singleton(Illuminate\Session\SessionManager::class, function () use ($app) {
+    return $app->loadComponent('session', Illuminate\Session\SessionServiceProvider::class, 'session');
+});
+
+$app->singleton('session.store', function () use ($app) {
+    return $app->loadComponent('session', Illuminate\Session\SessionServiceProvider::class, 'session.store');
+});
+
+$app->singleton('cookie', function () use ($app) {
+    return $app->loadComponent('session', 'Illuminate\Cookie\CookieServiceProvider', 'cookie');
+});
+
+$app->bind('Illuminate\Contracts\Cookie\QueueingFactory', 'cookie');
 
 /*
 |--------------------------------------------------------------------------
@@ -56,17 +78,13 @@ $app->singleton(
 */
 
 $app->middleware([
-    'Illuminate\Cookie\Middleware\EncryptCookies',
-    'Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse',
-    'Illuminate\Session\Middleware\StartSession',
-    'Illuminate\View\Middleware\ShareErrorsFromSession',
-    'Laravel\Lumen\Http\Middleware\VerifyCsrfToken',
+    \Illuminate\Session\Middleware\StartSession::class,
+//     App\Http\Middleware\ExampleMiddleware::class
 ]);
 
-$app->routeMiddleware([
-    'auth' => 'App\Http\Middleware\AuthMiddleware',
-    'guest' => 'App\Http\Middleware\GuestMiddleware',
-]);
+// $app->routeMiddleware([
+//     'auth' => App\Http\Middleware\Authenticate::class,
+// ]);
 
 /*
 |--------------------------------------------------------------------------
@@ -79,7 +97,9 @@ $app->routeMiddleware([
 |
 */
 
-// $app->register('App\Providers\AppServiceProvider');
+// $app->register(App\Providers\AppServiceProvider::class);
+// $app->register(App\Providers\AuthServiceProvider::class);
+// $app->register(App\Providers\EventServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------
@@ -92,8 +112,16 @@ $app->routeMiddleware([
 |
 */
 
-require __DIR__ . '/../app/Http/routes.php';
+$app->router->group([
+    'namespace' => 'App\Http\Controllers',
+], function ($router) {
+    require __DIR__.'/../routes/web.php';
+});
 
-$app->configure('services');
+
+$app->configure("services");
+$app->configure("mail");
+$app->configure("session");
 
 return $app;
+
